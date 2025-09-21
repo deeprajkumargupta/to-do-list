@@ -5,43 +5,36 @@ const deletebtns=document.querySelectorAll('.delete');
 const ol=document.querySelector('ol');
 const list=document.querySelectorAll('li');
 
-async function addTask(taskText){
-    return new Promise(resolve=>{
-        setTimeout(()=>{
-            let newLI= document.createElement('li');
-            // newLI.innerHTML=`${taskText} <button class="btn delete"><span class="material-symbols-outlined">close</span></button>`;
-            // ol.append(newLI);
-            newLI.textContent=taskText+" ";
+function addTask(taskText){
+    if (!taskText.trim()) {
+        alert("Task cannot be empty!");
+        return;
+    }
+    let newLI= document.createElement('li');
+    // newLI.innerHTML=`${taskText} <button class="btn delete"><span class="material-symbols-outlined">close</span></button>`;
+    // ol.append(newLI);
+    newLI.textContent=taskText+" ";
 
-            let delbtn=document.createElement('button');
-            delbtn.className='btn delete';
-            delbtn.innerHTML='<span class="material-symbols-outlined">close</span>';
+    let delbtn=document.createElement('button');
+    delbtn.className='btn delete';
+    delbtn.innerHTML='<span class="material-symbols-outlined">close</span>';
 
-            delbtn.addEventListener('click',()=>{
-                newLI.remove();
-                alert("Task deleted Successfully");
-            })
-            newLI.append(delbtn);
-            ol.append(newLI);
-            resolve();
-        },1000)
+    delbtn.addEventListener('click',()=>{
+        newLI.remove();
     })
+    newLI.append(delbtn);
+    ol.append(newLI);
+    alert("Task added Successfully :)");
 }
+
 function deleteTask(list){
     ol.removeChild(list);
-    alert("Task deleted Successfully");
 }
 addbtn.addEventListener('click',
-    async function(e){
+    function(e){
         e.preventDefault();
-        try{
-            await addTask(taskinput.value);
-            taskinput.value="";
-            alert("Task added Successfully :)");
-        }
-        catch{
-            alert("Couldn't add task T-T");
-        }
+        addTask(taskinput.value);
+        taskinput.value="";
 });
 deletebtns.forEach( btn=>{
     btn.addEventListener('click',(e)=>{
