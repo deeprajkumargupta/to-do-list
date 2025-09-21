@@ -12,7 +12,6 @@ Link: https://to-do-list-lake-pi-60.vercel.app/
 - ⚡ **Smooth animations & transitions** (scale & shadow effects on hover).  
 - ⏳ **Async task adding** (simulated delay using `setTimeout`).  
 - 📱 **Responsive design** (works on desktop and smaller screens).
-- 💾 **Local Storage Support** → Tasks are saved even after refreshing the page.
 - 🎭 **Theme Changer** → Switch between multiple color themes.
 - ✍️ **Signature Section** → Credits / signature footer.
 
@@ -35,7 +34,6 @@ Link: https://to-do-list-lake-pi-60.vercel.app/
    - Task comes with a delete button (`close` icon).  
 3. Click on the ❌ button to remove a task.  
 4. Alerts notify you when a task is **added** or **deleted**.  
-5. All tasks are saved in **local storage**, so they remain after refreshing.
 6. Use the Theme Changer to switch between different color themes.
 ---
 
