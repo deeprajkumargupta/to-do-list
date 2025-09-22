@@ -1,14 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+/* Default */
 :root {
-  --bg-color: #cdfbcd;
-  --card: #ed8686;
-  --text: #ffffff;
-  --primary-button: #28a745;
-  --delete: #e74c3c;
-  --button-text:white;
+    --bg-color: #cdfbcd;
+    --card: #ed8686;
+    --text: #ffffff;
+    --primary-button: #28a745;
+    --delete: #e74c3c;
+    --button-text:white;
+    --list-hover: black;
+    --add-hover:#3e8950;
+    --li-bg: rgb(167, 143, 253);
+    --ol-bg: rgb(242, 242, 118)
+}
+
+/* Minimal & Clean */
+.minimal-theme {
+    --bg-color: #f4f6f8;
+    --card: #d7f6e9;
+    --text: #333333;
+    --primary-button: #36d45b;
+    --delete: #e74c3c;
+    --button-text:white;
+    --list-hover: black;
+    --add-hover:#3e8950;
+    --li-bg: rgb(200, 241, 245);
+    --ol-bg: rgb(255, 255, 255);
+}
+
+/* Modern & Fresh */
+.modern-theme {
+    --bg-color: #eaf0f6;
+    --card: #cecece;
+    --text: #2d3436;
+    --primary-button: #3498db;
+  --delete: #ff6b6b;
   --list-hover: black;
   --add-hover:#3e8950;
+    --li-bg: rgb(223, 223, 223);
+    --ol-bg: rgb(255, 255, 255);
+}
+
+/* Dark Theme */
+.dark-theme {
+    --bg-color: #121212;
+    --card: #1e1e1e;
+    --text: #f1f1f1;
+    --primary-button: #00b894;
+    --delete:#ff7675;
+    --list-hover: black;
+    --add-hover:#3e8950;
+    --li-bg: rgb(115, 114, 117);
+    --ol-bg: rgb(255, 255, 255);
 }
 
 *{
@@ -76,7 +120,7 @@ h2{
 }
 .list{
     width: 100%;
-    background-color: rgb(242, 242, 118);
+    background-color: var(--ol-bg);
     margin: auto;
     padding: 8%;
     border-radius: 8px;
@@ -92,7 +136,7 @@ h2{
     width:100%;
 }
 .list ol li{
-    background-color: rgb(167, 143, 253);
+    background-color: var(--li-bg);
     height:100%;
     display: flex;
     justify-content: space-between;
@@ -169,4 +213,27 @@ footer p a i:hover{
     color:#ffffff;
     box-shadow: 0px 0px 2px white;
     transition: 0.15s;
+}
+.themes{
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;;
+    padding: 1%;
+    color: var(--text);
+}
+.theme-box1{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.theme-box{
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    text-align: center;
+    cursor:pointer;
 }

@@ -4,6 +4,7 @@ const addbtn=document.querySelector('.add');
 const deletebtns=document.querySelectorAll('.delete');
 const ol=document.querySelector('ol');
 const list=document.querySelectorAll('li');
+const themeboxes=document.querySelectorAll('.theme-box')
 
 function addTask(taskText){
     if (!taskText.trim()) {
@@ -42,3 +43,14 @@ deletebtns.forEach( btn=>{
     console.log(e.target.closest('li'));
     })
 })
+themeboxes.forEach(box=>{
+    box.addEventListener('click',(e)=>{
+    let theme = box.getAttribute("data-theme");
+    console.log(e.target.getAttribute("data-theme"));
+    document.body.className = "";
+
+    if (theme !== "default") {
+      document.body.classList.add(theme);
+    }
+    });
+});
